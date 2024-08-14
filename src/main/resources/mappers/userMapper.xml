@@ -4,20 +4,59 @@
  
  <mapper namespace="com.qwerpark.spring.ex.mvc.repository.UserRepository">
  	<select id="selectLastUser" resultType="com.qwerpark.spring.ex.mvc.domain.User">
- 	SELECT
-    id,
-    name,
-    yyyymmdd,
-    email,
-    introduce,
-    createdAt,
-    updatedAt
-FROM
-    new_user
-ORDER BY
-    id DESC
-LIMIT
-    1
+	 	SELECT
+	    `id`
+	    ,`name`
+	    ,`yyyymmdd`
+	    ,`email`
+	    ,`introduce`
+	    ,`createdAt`
+	    ,`updatedAt`
+		FROM
+		    `new_user`
+		ORDER BY
+		    id DESC
+		LIMIT
+		    1
 
  	</select>
+ 	<insert id="insertUser" parameterType="map">
+    INSERT INTO
+        `new_user`
+        (
+            `name`
+            ,`yyyymmdd`
+            ,`email`
+            ,`introduce`
+        )
+    VALUES
+        (
+            #{name},
+            #{birthday},
+            #{email},
+            #{introduce}
+        )
+</insert>
+
+<insert id="insertUserByObject" parameterType="com.qwerpark.spring.ex.mvc.domain.User"
+useGeneratedKeys="true" keyProperty="id">
+ INSERT INTO
+        `new_user`
+        (
+            `name`
+            ,`yyyymmdd`
+            ,`email`
+            ,`introduce`
+        )
+    VALUES
+        (
+            #{name}
+            ,#{yyyymmdd}
+            ,#{email}
+            ,#{introduce}
+        )
+
+</insert>
+
+ 	
  </mapper>

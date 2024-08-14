@@ -8,16 +8,20 @@
 	<h1>정보</h1>
 	<table border="1">
 		<tr>
+			<td>id</td>
+			<td th:text="${result.id}">29</td>
+		</tr>
+		<tr>
 			<td>이름</td>
-			<td th:text="${result.namez}">김인</td>
+			<td th:text="${result.name}">김인</td>
 		</tr>
 		<tr>
 			<td>생년월일</td>
-			<td th:text=${result.yyyymmdd}>19981027</td>
+			<td th:text="${result.yyyymmdd}">19981027</td>
 		</tr>
 		<tr>
 			<td>이메일</td>
-			<td th:text={result.email}>bp4sp4@naver.om</td>
+			<td th:text="${result.email}">bp4sp4@naver.com</td>
 		</tr>	
 </table>
 </body>
