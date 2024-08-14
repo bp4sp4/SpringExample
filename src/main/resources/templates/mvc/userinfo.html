@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text=${title}> 정보</title>
+</head>
+<body>
+	<h1>정보</h1>
+	<table border="1">
+		<tr>
+			<td>이름</td>
+			<td th:text="${result.namez}">김인</td>
+		</tr>
+		<tr>
+			<td>생년월일</td>
+			<td th:text=${result.yyyymmdd}>19981027</td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td th:text={result.email}>bp4sp4@naver.om</td>
+		</tr>	
+</table>
+</body>
+</html>
