@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>반복문</h2>
+	<!--  0 ~ 4 반복 -->
+	<div th:each ="i:${#numbers.sequence(0, 4)}">
+		<span th:text="${i}"></span>
+	</div>
+	
+	<div th:each="fruit:${fruitList}">
+		<span th:text="${fruit}"></span>
+	</div>
+</body>
+</html>
