@@ -16,7 +16,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Builder
+@Builder(toBuilder=true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -37,7 +37,7 @@ public class Student {
 	private String email;
 	
 	@Column(name="dreamJob")
-	private String dereamJob;
+	private String dreamJob;
 	
 	@CreationTimestamp
 	@Column(name="createdAt")
